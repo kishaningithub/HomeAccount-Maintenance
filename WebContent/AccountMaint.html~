@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>Daily Account Maintenance</title>
+ <link type="text/css" href="css/ui-lightness/jquery-ui-1.8.20.custom.css" rel="stylesheet" />
+ <style type="text/css">
+  body{
+    font-family:arial;
+    font-size:10px;
+  }
+</style>
+ <script type="text/javascript" src="scripts/jquery-1.7.2.min.js"></script>
+ <script type="text/javascript" src="scripts/jquery-ui-1.8.20.custom.min.js"></script>
+ <script>
+ </script>
+ <script>
+ /*
+  *  Initialises elements inside daily expenses tab
+  */
+ function dailyExpenseData(data)
+ {
+   $(".date").datepicker({dateFormat:'dd-M-yy'});
+   $("#incomeTypes").load("modules/selects.html #incomeTypes option");
+   $("#expenseTypes").load("modules/selects.html #expenseTypes option");
+ }
+ /*
+  *  Initialises elements inside log tab
+  */
+ function logData(data)
+ {
+   $(".date").datepicker({dateFormat:'dd-M-yy'});
+ }
+ /* Does the Initial Configuration of the screen
+  * 1)Loads the mainmenu
+  * 2)Loads individual screens inside the main menu
+  * 3)Associates DatePicker with Date
+  * 4)Loads the by income and expense types by retrieving values from the server 
+  */
+  function main()
+  {
+   $("#dailyExpense").load("modules/DailyExpense.html",dailyExpenseData);
+   $("#dailyExpense").load("modules/Log.html",logData);
+   $("#MainMenu").tabs();
+  }
+  $(document).ready(main);
+ </script>
+ </head>
+ <body>
+  <div id="MainMenu">
+   <ul>
+     <li><a href="#dailyExpense">DailyExpense</a></li>
+     <li><a href="#log">Log</a></li>
+   </ul>
+   <div id="dailyExpense"></div>
+   <div id="log"></div>
+  </div>
+ </body>
+</html>

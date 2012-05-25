@@ -1,0 +1,12 @@
+<form>
+   <label for="date">Date</label>
+   <input class="date" id="date" type="text">
+   <label for="income">Income</label>
+   <select id="incomeTypes"><option value='1'>Yes</option></select>
+   <input id="income" type="text">
+   <label for="expense">Expense</label>
+   <select id="expenseTypes"></select>
+   <input id="expense" type="text">
+   <div id="successfulSubmission"></div>
+   <input type="button" value="submit">
+</form>

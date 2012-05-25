@@ -1,0 +1,7 @@
+<form>
+   <label for="date">From Date</label>
+   <input class="date" id="fromDate" type="text">
+   <label for="date">From Date</label>
+   <input class="date" id="toDate" type="text">
+   <input type="button" value="submit">
+</form>

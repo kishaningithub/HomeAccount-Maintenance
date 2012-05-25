@@ -1,0 +1,6 @@
+<div id="incomeTypes">
+<option value="sal">Salary</option>
+</div>
+<div id="expenseTypes">
+<option value="petrol">Petrol</option>
+</div>

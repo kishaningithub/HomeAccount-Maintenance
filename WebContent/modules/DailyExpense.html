@@ -1,0 +1,39 @@
+<style>
+ .popup
+ {
+  cursor:context-menu;
+ }
+</style>
+
+<form id="DailyInExTracker">
+   <label for="date">Date</label>
+   <input class="date dailyData" id="date" type="text">
+   <label for="income" class="popup">Income</label>
+   <select id="incomeTypes" class="dailyData"></select>
+   <input id="income" type="text" class="dailyData">
+   <label for="expense" class="popup">Expense</label>
+   <select id="expenseTypes" class="dailyData"></select>
+   <input id="expense" type="text" class="dailyData">
+   <input type="submit" value="store">
+</form>
+<script>
+ $(".popup").click(function(){
+	$(this).dialog(); 
+	return false;
+ });
+ $("#DailyInExTracker").submit(function(){
+	 var todaysData="";
+	 $(".dailyData").each(function(i)
+			 {
+		       todaysData+=$(this).val()+"_";
+			 });
+	 todaysData=todaysData.slice(0, todaysData.length-1);
+	 storeInEx(todaysData);
+	 return false;
+ })
+ function storeInEx(todaysData)
+ {
+	  $.get("DailyAccMain?addInEx="+todaysData);
+			   
+ }
+</script>

@@ -1,0 +1,35 @@
+<form>
+   <label for="fromDate">From Date</label>
+   <input class="date" id="fromDate" type="text">
+   <label for="toDate">To Date</label>
+   <input class="date" id="toDate" type="text">
+   <input type="button" value="submit">
+</form>
+<div id="users-contain" class="ui-widget">
+	<h1>Existing Users:</h1>
+	<table id="users" class="ui-widget ui-widget-content">
+		<thead>
+			<tr class="ui-widget-header ">
+				<th>Name</th>
+				<th>Email</th>
+				<th>Password</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>John Doe</td>
+				<td>john.doe@example.com</td>
+				<td>johndoe1</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<script>
+$( function(){
+	
+$("#toDate").click(function(){
+	$("#users-contain").dialog({modal:true});
+})
+});
+</script>
